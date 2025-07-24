@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3歳からのヤマハ音楽教室「ぷらいまりー」：お子様の感性を豊かに育む</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3, h4 {
+            color: #004d40; /* Dark Teal */
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.2em; text-align: center; margin-bottom: 0.5em; }
+        h2 { font-size: 1.8em; margin-bottom: 0.8em; }
+        h3 { font-size: 1.5em; margin-bottom: 0.6em; }
+        p { margin-bottom: 1em; }
+        a { color: #00796b; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #e0f2f1; /* Light Teal */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #004d40;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section (First View) */
+        .hero {
+            background: linear-gradient(to bottom, #b2dfdb, #e0f2f1); /* Gradient */
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #004d40;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #004d40;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .hero .hero-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        section:nth-of-type(even) {
+            background-color: #f0fdfc; /* Very light teal */
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #00796b;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Why Choose Now Section */
+        .why-choose .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .why-choose .grid-item {
+            flex: 1 1 calc(50% - 30px); /* 2 columns on larger screens */
+            min-width: 300px;
+            background-color: #e0f2f1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .why-choose .grid-item h3 {
+            color: #004d40;
+            margin-top: 0;
+        }
+        .why-choose .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Course Details Section */
+        .course-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .course-details ul li {
+            background-color: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 calc(33% - 20px);
+            min-width: 280px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .course-details .method-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .course-details .method-item {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 150px;
+            text-align: center;
+            padding: 15px;
+            background-color: #f0fdfc;
+            border-radius: 5px;
+            border: 1px solid #b2dfdb;
+        }
+        .course-details .method-item h4 {
+            color: #00796b;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .course-details .lesson-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .course-details .lesson-content-item {
+            background-color: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .course-details .lesson-content-item img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .course-details .growth-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+        .course-details .growth-table th,
+        .course-details .growth-table td {
+            border: 1px solid #b2dfdb;
+            padding: 12px;
+            text-align: left;
+        }
+        .course-details .growth-table th {
+            background-color: #00796b;
+            color: #fff;
+            font-weight: bold;
+        }
+        .course-details .growth-table td:first-child {
+            background-color: #f0fdfc;
+            font-weight: bold;
+            color: #004d40;
+        }
+
+        /* Lesson Forms Section */
+        .lesson-forms .form-option {
+            background-color: #e0f2f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lesson-forms .form-option h3 {
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        .lesson-forms .form-option ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .lesson-forms .form-option ul li strong {
+            color: #00796b;
+        }
+        .lesson-forms .form-option.personal {
+            background-color: #b2dfdb;
+        }
+
+        /* Support Section */
+        .support-section .support-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background-color: #f0fdfc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .support-section .support-item img {
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        .support-section .support-item h3 {
+            margin: 0;
+            color: #004d40;
+        }
+        .support-section .support-item p {
+            margin: 0;
+        }
+
+        /* Pricing Section */
+        .pricing-section .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .pricing-section .price-table th,
+        .pricing-section .price-table td {
+            border: 1px solid #b2dfdb;
+            padding: 12px;
+            text-align: left;
+        }
+        .pricing-section .price-table th {
+            background-color: #00796b;
+            color: #fff;
+            font-weight: bold;
+        }
+        .pricing-section .price-table td:first-child {
+            background-color: #e0f2f1;
+            font-weight: bold;
+        }
+        .pricing-section .note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+        }
+        .pricing-section .material-cost {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .pricing-section .material-item {
+            background-color: #f0fdfc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .pricing-section .material-item img {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+        .pricing-section .material-item p {
+            font-weight: bold;
+            color: #004d40;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section .faq-item {
+            background-color: #e0f2f1;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-section .faq-question {
+            display: block;
+            background-color: #00796b;
+            color: #fff;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+        .faq-section .faq-question:hover {
+            background-color: #004d40;
+        }
+        .faq-section .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .faq-section .faq-question.active::after {
+            content: '-';
+            transform: translateY(-50%) rotate(0deg); /* No rotation for minus */
+        }
+        .faq-section .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: #f9f9f9;
+        }
+        .faq-section .faq-answer.open {
+            max-height: 500px; /* Sufficiently large value for content */
+            padding: 15px 25px;
+        }
+        .faq-section .faq-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .faq-section .faq-link a {
+            display: inline-block;
+            background-color: #00796b;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .faq-section .faq-link a:hover {
+            background-color: #004d40;
+            text-decoration: none;
+        }
+
+
+        /* Call to Action */
+        .cta-section {
+            background-color: #004d40; /* Dark Teal */
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .cta-section h2 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        .cta-section .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-section .cta-buttons a {
+            display: inline-block;
+            background-color: #ff9800; /* Orange Accent */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .cta-section .cta-buttons a:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238; /* Dark Grey Blue */
+            color: #eceff1;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer .footer-links a {
+            color: #80cbc4; /* Light Aqua */
+            margin: 0 10px;
+        }
+        footer .social-links img {
+            width: 30px;
+            height: 30px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        footer p {
+            margin-top: 20px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+
+            .hero { padding: 40px 15px; }
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+
+            .why-choose .grid-item {
+                flex: 1 1 100%; /* Single column on small screens */
+            }
+            .course-details ul li,
+            .course-details .method-item {
+                flex: 1 1 100%;
+            }
+            .course-details .lesson-content-grid {
+                grid-template-columns: 1fr;
+            }
+            .support-section .support-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .support-section .support-item img {
+                margin-bottom: 10px;
+            }
+            .cta-section .cta-buttons a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 15px; }
+            section { padding: 40px 0; }
+            .hero h1 { font-size: 1.6em; }
+            .hero p { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- 仮のロゴ。実際のロゴ画像URLに差し替えてください -->
+            <img src="https://via.placeholder.com/150x50?text=YAMAHA+LOGO" alt="ヤマハ音楽教室ロゴ" class="logo">
+            <p>はじめての音楽体験を、最高の教育で。3歳からの「ぷらいまりー」コース。</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>3歳、想像力あふれるわが子に、<br>初めての音楽体験を。ヤマハなら、その感性が豊かに花開く。</h1>
+                <!-- 導入メッセージ -->
+                <p>3歳は「想像の世界に入り込み、『その気』になって表現ができるようになる特別な時期」です。この時期に「質の高い音楽に触れ、楽しむ経験を積み重ねる豊かなインプットが、将来、臆せず自分を表現できる力へつながります」 [1]。</p>
+                <!-- キービジュアル。実際の画像URLに差し替えてください -->
+                <img src="https://via.placeholder.com/800x400?text=3歳児が楽しそうに音楽に触れるイメージ" alt="3歳児が楽しそうに鍵盤に触れる子供たち" class="hero-image">
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <div class="container">
+                <h2>なぜ今、3歳でヤマハ音楽教室を選ぶべきなの？</h2>
+                <div class="content-grid">
+                    <div class="grid-item">
+                        <h3>「今だからこそ」の特別な成長期</h3>
+                        <p>3歳は「耳の力がぐんと伸びる4・5歳」へと続く大事な時期であり、「イメージを広げて音楽とふれあうことからスタート」するのに最適です [1]。</p>
+                        <p>「豊かな音楽のシャワーを浴びて、全身で楽しむ経験が大切」です [1]。</p>
+                        <img src="https://via.placeholder.com/400x250?text=子供の成長イメージ" alt="子供の成長イメージ">
+                    </div>
+                    <div class="grid-item">
+                        <h3>単なる「弾く」だけじゃない、総合的な人間形成</h3>
+                        <p>ヤマハでは「弾く」ことを、「指が速く動くかどうか」「楽譜が読めるかどうか」に限定せず、「こう弾きたい」というイメージを持ち、音をよく聴きながら気持ちを込めて演奏できることを大切にしています [2]。</p>
+                        <p>レッスンを通じて、鍵盤楽器の技術だけでなく、「協調性、社会性、粘り強さ、集中力といった『非認知能力』も自然と育まれます」 [2, 3]。</p>
+                        <p>東京大学大学院の遠藤利彦教授も、幼児教育における「非認知能力」（自己肯定感、意欲、粘り強さ、対人関係能力など）の重要性を強調しています [4, 5]。</p>
+                        <img src="https://via.placeholder.com/400x250?text=非認知能力の育成イメージ" alt="非認知能力の育成イメージ">
+                    </div>
+                    <div class="grid-item">
+                        <h3>質の高い講師陣</h3>
+                        <p>「ヤマハ独自の認定講師資格試験に合格し、幅広い音楽知識や、幼児とのコミュニケーション力に長けた講師が指導」します [6]。</p>
+                        <img src="https://via.placeholder.com/400x250?text=講師のイメージ" alt="ヤマハ認定講師のイメージ">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-details">
+            <div class="container">
+                <h2>「ぷらいまりー」コースってどんなレッスン？</h2>
+                <ul>
+                    <li>
+                        <h3>対象年齢</h3>
+                        <p><strong>3歳（年少）</strong>。2025年度開講クラスは2021年4月2日～2022年4月1日生まれのお子様が対象です [7-9]。</p>
+                    </li>
+                    <li>
+                        <h3>期間</h3>
+                        <p><strong>約3年間</strong>かけて無理なく音楽力を育みます [1, 7-10]。</p>
+                    </li>
+                    <li>
+                        <h3>経験する曲数</h3>
+                        <p>3年間で「なんと<strong>140曲以上</strong>」のクラシックをはじめ、様々なジャンルの曲を経験します [2, 10, 11]。</p>
+                    </li>
+                </ul>
+
+                <h3>ヤマハ独自の「きく」「うたう」「ひく」「よむ」メソッド</h3>
+                <p>「1曲を<strong>聞く・歌う・引く・読む</strong>という4つの段階を踏んで学ぶヤマハ独自のメソッド」が「ぷらいまりーの大きな特徴」です [2, 10]。</p>
+                <div class="method-grid">
+                    <div class="method-item"><h4>きく</h4></div>
+                    <div class="method-item"><h4>うたう</h4></div>
+                    <div class="method-item"><h4>ひく</h4></div>
+                    <div class="method-item"><h4>よむ</h4></div>
+                </div>
+
+                <h3>レッスン内容の具体例</h3>
+                <div class="lesson-content-grid">
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=歌詞唱" alt="歌詞唱のアイコン">
+                        <h4>歌詞唱</h4>
+                        <p>さまざまな曲想の歌を歌い、情感を育みます [6]。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=リズムステップ" alt="リズムステップのアイコン">
+                        <h4>リズムステップ</h4>
+                        <p>全身を使ってリズムを表現することで、リズム感を養います [6]。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=鑑賞" alt="鑑賞のアイコン">
+                        <h4>鑑賞</h4>
+                        <p>身体で表現したり、絵本を見たりしながら音楽を聴きます [6]。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=レパートリー" alt="レパートリーのアイコン">
+                        <h4>レパートリー</h4>
+                        <p>音楽のさまざまな要素を学びながら、いつでも演奏できる曲に仕上げます [6]。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=メロディー暗唱" alt="メロディー暗唱のアイコン">
+                        <h4>メロディー暗唱</h4>
+                        <p>先生が歌ったメロディーを「ドレミ」で真似して歌い、覚えていきます [6]。</p>
+                    </div>
+                    <div class="lesson-content-item">
+                        <img src="https://via.placeholder.com/100x100?text=鍵盤遊び" alt="鍵盤遊びのアイコン">
+                        <h4>鍵盤遊び</h4>
+                        <p>「あそび」の要素を取り入れながら、音の高低や黒鍵の位置など、鍵盤楽器について理解を深めます [6]。</p>
+                    </div>
+                </div>
+
+                <h3>3年間での成長ステップ</h3>
+                <table class="growth-table">
+                    <thead>
+                        <tr>
+                            <th>チカラ</th>
+                            <th>半年後</th>
+                            <th>1年後</th>
+                            <th>2年後</th>
+                            <th>3年後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>きくチカラ</td>
+                            <td>音楽に合わせて体を動かしてリズムを感じます [11]。</td>
+                            <td>音楽の特徴（優しい曲、元気な曲など）をとらえて聴きます [11]。</td>
+                            <td>聴いた音を、少しずつ「ドレミ」に置き換えられるようになります [11]。</td>
+                            <td>「ドレミ」のメロディーやハーモニー、曲想などを聴きとれるようになります [11]。</td>
+                        </tr>
+                        <tr>
+                            <td>うたうチカラ</td>
+                            <td>音源や先生の伴奏に合わせて楽しく歌います [11]。</td>
+                            <td>歌詞に加えて、「ドレミ」で歌うことも経験します [11]。</td>
+                            <td>音やリズムだけでなく、歌い方も先生をまねして歌えるようになります [11]。</td>
+                            <td>音程にも気を付けながら、その曲の雰囲気を感じて表情豊かに歌えるようになります [11]。</td>
+                        </tr>
+                        <tr>
+                            <td>ひくチカラ</td>
+                            <td>あそびの要素をとりいれながら、音の高低や黒鍵白鍵などの鍵盤のなりたちを理解します [11]。</td>
+                            <td>「ドレミ」を使った右手のレパートリーを弾きます [11]。</td>
+                            <td>1曲をとおして両手で演奏できるようになります [11]。</td>
+                            <td>さまざまな調の曲が弾けるようになります [11]。</td>
+                        </tr>
+                        <tr>
+                            <td>よむチカラ</td>
+                            <td>ー</td>
+                            <td>ー</td>
+                            <td>曲の流れに沿って楽譜を目で追う経験をします [11]。</td>
+                            <td>弾けるようになった曲の「ドレミ」やリズムが読めるようになります [11]。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">※3年間の音楽的成長の目安であり、個人差があります。一人一人の成長に合わせた指導を行っていきます [12]。</p>
+            </div>
+        </section>
+
+        <section class="lesson-forms">
+            <div class="container">
+                <h2>選べる2つのレッスン形態：お子様にぴったりの学び方</h2>
+                <div class="form-option">
+                    <h3>「ぷらいまりー」コース（グループ＋個人レッスン）</h3>
+                    <ul>
+                        <li><strong>グループレッスン（月3回、50分/回）</strong>: 「お友だちと一緒に音楽を奏で、分かち合う歓びが得られます」 [12]。他の子の音を聴いたり、クラスでの発表を通じて「自分ももっとがんばりたい！」という意欲や積極性を育みます [12]。グループの人数は「5～8名程度」です [5, 9]。</li>
+                        <li><strong>個人レッスン（月0回～月3回、20分/回）</strong>: グループレッスンに加えて、「個々に応じた演奏指導や読譜指導を行います」 [12]。一人ひとりの様子に合わせたきめ細やかなサポートで、「引く力」を着実に伸ばし、「もっと弾きたい」という気持ちを育みます [12, 13]。</li>
+                        <li>「ぷらいまりー1は『グループのみ』、または『グループ+個人月1回』を選択可能」 [5, 8, 9]。「ぷらいまりー2・3は『グループ+個人月1回』が基本」ですが、「ご希望に応じて回数（月2回・3回）をお選びいただけます」 [5, 8, 9]。入会後に回数変更も可能です [5, 9]。</li>
+                    </ul>
+                </div>
+                <div class="form-option personal">
+                    <h3>「ぷらいまりーパーソナル」コース（個人レッスンのみ）</h3>
+                    <ul>
+                        <li>「ピアノまたはエレクトーンの個人レッスンのみ」で受講する形態です [14]。1回30分、月3回のレッスンで、鍵盤演奏において個々へのきめ細やかな指導を重視したい場合におすすめです [7]。</li>
+                        <li>「伸びる時期に伸びる力を育む」という考え方はそのままに、ピアノまたはエレクトーンの個人レッスンで、音楽の基礎となる力や自由に表現できる力を身につけます [14]。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <div class="container">
+                <h2>ご家庭でのサポートと保護者の皆様へ</h2>
+                <div class="support-item">
+                    <img src="https://via.placeholder.com/80x80?text=家族" alt="保護者同伴のアイコン">
+                    <div>
+                        <h3>保護者の同伴について</h3>
+                        <p>「ぷらいまりー1・ぷらいまりー2の前半は保護者の方にご同伴いただきレッスンを行いますが、ぷらいまりー2の後半からはお子様の自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります」 [10, 15-17]。</p>
+                    </div>
+                </div>
+                <div class="support-item">
+                    <img src="https://via.placeholder.com/80x80?text=アプリ" alt="アプリと動画のアイコン">
+                    <div>
+                        <h3>充実した練習サポートツール</h3>
+                        <p>「練習のポイントが分かる動画」や、「キャラクターと一緒にくり返し練習ができるアプリ」など、「ご家庭での練習をサポートする様々なツール」が用意されています [3, 6, 13, 18]。※アプリは「ぷらいまりー2より使用可能」です [3, 6]。</p>
+                    </div>
+                </div>
+                <div class="support-item">
+                    <img src="https://via.placeholder.com/80x80?text=ミューナビ" alt="ミューナビのアイコン">
+                    <div>
+                        <h3>教材音源は「ミューナビ」で提供</h3>
+                        <p>レッスン料には「教材音源や動画を視聴できる専用サイト『ミューナビ』の利用料を含みます」 [7, 19, 20]。「インターネットに接続可能な端末（スマートフォンやPC等）・通信環境・メールアドレスをご用意ください」 [7, 19, 20]。「ミューナビのお試し版にて動画・音声等が再生されるかご確認ください」 [7, 19, 20]。**CDの販売はございません**のでご注意ください [7, 16, 20]。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <h2>コース料金のご案内</h2>
+                <h3>レッスン料（税込）</h3>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>コース</th>
+                            <th>形態</th>
+                            <th>月額料金</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">ぷらいまりー1</td>
+                            <td>グループのみ</td>
+                            <td><strong>6,600円 または 7,150円</strong> [8, 9, 19]</td>
+                        </tr>
+                        <tr>
+                            <td>グループ + 個人月1回</td>
+                            <td><strong>8,580円 ～ 9,460円</strong> [8, 9, 19]</td>
+                        </tr>
+                        <tr>
+                            <td>グループ + 個人月2回/3回</td>
+                            <td>設定なし [9, 19]</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">ぷらいまりー2・3</td>
+                            <td>グループのみ</td>
+                            <td><strong>7,700円 または 8,250円</strong> [8, 19, 20]</td>
+                        </tr>
+                        <tr>
+                            <td>グループ + 個人月1回</td>
+                            <td><strong>9,680円 ～ 10,560円</strong> [8, 19, 20]</td>
+                        </tr>
+                        <tr>
+                            <td>グループ + 個人月2回</td>
+                            <td><strong>11,660円 ～ 12,540円</strong> [8, 19, 20]</td>
+                        </tr>
+                        <tr>
+                            <td>グループ + 個人月3回</td>
+                            <td><strong>13,640円 ～ 14,740円</strong> [8, 19, 20]</td>
+                        </tr>
+                        <tr>
+                            <td>ぷらいまりーパーソナル</td>
+                            <td>個人レッスンのみ（月3回）</td>
+                            <td><strong>9,900円 または 10,450円</strong> [7, 8]</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります [7, 19, 20]。</p>
+
+                <h3>別途費用</h3>
+                <p>「入会金・施設料」がかかりますが、「教室によって異なりますので、ご検討の教室ページをご覧ください」 [7, 19, 20]。</p>
+
+                <h3>入会時教材費（税込）</h3>
+                <div class="material-cost">
+                    <div class="material-item">
+                        <img src="https://via.placeholder.com/120x120?text=テキスト" alt="テキストのイラスト">
+                        <p>テキスト（2冊）：<strong>2,640円</strong> [7, 8, 16, 20]</p>
+                    </div>
+                    <div class="material-item">
+                        <img src="https://via.placeholder.com/120x120?text=バッグ" alt="レッスンバッグのイラスト">
+                        <p>レッスンバッグ：<strong>2,200円</strong> [7, 8, 16, 20]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>よくある質問（FAQ）</h2>
+                <div class="faq-item">
+                    <div class="faq-question">ヤマハミュージックスクールで習うとなぜ良いの？（個人経営のピアノ教室との違いは？）</div>
+                    <div class="faq-answer">
+                        <p>ご自身のイメージや専門家による見解をここに記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">今までのコース（おんがくなかよしコース・幼児科）とは何が違うの？</div>
+                    <div class="faq-answer">
+                        <p>ご自身のイメージや専門家による見解をここに記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">宿題はありますか？</div>
+                    <div class="faq-answer">
+                        <p>ご自身のイメージや専門家による見解をここに記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">3年後にはどんな曲が弾けるようになりますか？</div>
+                    <div class="faq-answer">
+                        <p>ソース[11]の3年後の成長ステップを参考に、より具体的な回答を記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">家庭には、いつどのような楽器を用意したらいいですか？</div>
+                    <div class="faq-answer">
+                        <p>ご自身のイメージや専門家による見解をここに記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">レッスンに保護者の付き添いは必要ですか？</div>
+                    <div class="faq-answer">
+                        <p>「ぷらいまりー1・ぷらいまりー2の前半は保護者の方にご同伴いただきレッスンを行いますが、ぷらいまりー2の後半からはお子様の自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります」[10, 15-17]。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">下の子をレッスンに連れて行っても大丈夫ですか？</div>
+                    <div class="faq-answer">
+                        <p>ご自身のイメージや専門家による見解をここに記述します。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">個人レッスンの回数は、いつ・どうやって決めればいいの？</div>
+                    <div class="faq-answer">
+                        <p>ぷらいまりー1は「グループのみ」、ぷらいまりー2・3は「グループ+個人月1回」が基本ですが、個人レッスンの回数はご希望に応じてお選びいただけます。入会後、途中で回数を変更することも可能です。個人レッスンの曜日・時間については会場に直接お問い合わせください。[5, 9]。</p>
+                    </div>
+                </div>
+                <div class="faq-link">
+                    <a href="#more-faq-link">その他のよくある質問はこちら</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>まずはお子様の可能性を体験！</h2>
+                <div class="cta-buttons">
+                    <a href="#体験レッスン申込" class="button">無料体験レッスン・レッスン見学を予約する</a>
+                    <a href="#教室検索" class="button">お近くの教室をさがす</a>
+                    <a href="#パンフレット請求" class="button">パンフレットを見る</a>
+                </div>
+                <p>無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！ [21]</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#利用規約">利用規約・会則</a>
+                <a href="#特定商取引法">特定商取引法に基づく表記</a>
+                <a href="#個人情報保護方針">個人情報保護方針</a>
+                <a href="#全国教室一覧">全国の教室一覧</a>
+                <a href="#サイトポリシー">サイトポリシー</a>
+                <a href="#関連リンク集">関連リンク集</a>
+            </div>
+            <div class="social-links" style="margin-top: 15px;">
+                <!-- ソーシャルメディアアイコンの仮画像。実際のアイコン画像URLに差し替えてください -->
+                <a href="https://line.me/" target="_blank"><img src="https://via.placeholder.com/30x30?text=LINE" alt="LINE"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="https://via.placeholder.com/30x30?text=X" alt="X"></a>
+                <a href="https://youtube.com/" target="_blank"><img src="https://via.placeholder.com/30x30?text=YouTube" alt="YouTube"></a>
+                <a href="https://facebook.com/" target="_blank"><img src="https://via.placeholder.com/30x30?text=META" alt="META (Facebook)"></a>
+                <a href="https://instagram.com/" target="_blank"><img src="https://via.placeholder.com/30x30?text=Instagram" alt="Instagram"></a>
+            </div>
+            <p>&copy; Yamaha Music Foundation All rights reserved. [21]</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (answer.classList.contains('open')) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = '0';
+                    answer.style.padding = '0 25px';
+                } else {
+                    answer.classList.add('open');
+                    // Set max-height to scroll height to allow smooth transition for variable content
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.padding = '15px 25px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
