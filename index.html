@@ -372,7 +372,56 @@
             background-color: #004d40;
             text-decoration: none;
         }
-
+        
+        /* ===== ここから追加 ===== */
+        /* Access Section */
+        .access-section {
+            background-color: #fff;
+        }
+        .access-section .access-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #f0fdfc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+        .access-section .access-image {
+            flex: 1 1 300px;
+        }
+        .access-section .access-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .access-section .access-info {
+            flex: 2 1 400px;
+        }
+        .access-section .access-info h3 {
+            font-size: 1.6em;
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .access-section .access-info dl {
+            margin: 0;
+        }
+        .access-section .access-info dt {
+            font-weight: 700;
+            color: #004d40;
+            margin-top: 15px;
+        }
+        .access-section .access-info dd {
+            margin: 5px 0 0 0;
+        }
+        .access-section .access-info .highlight {
+            color: #00796b;
+            font-weight: bold;
+        }
+        /* ===== ここまで追加 ===== */
 
         /* Call to Action */
         .cta-section {
@@ -463,6 +512,16 @@
                 width: 100%;
                 box-sizing: border-box;
             }
+
+            /* ===== ここから追加（レスポンシブ） ===== */
+            .access-section .access-card {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .access-section .access-info {
+                text-align: center;
+            }
+            /* ===== ここまで追加（レスポンシブ） ===== */
         }
 
         @media (max-width: 480px) {
@@ -485,7 +544,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>3歳、想像力あふれるわが子に、<br>初めての音楽体験を。ヤマハなら、その感性が豊かに花開く。</h1>
+                <h1>3歳、想像力あfれるわが子に、<br>初めての音楽体験を。ヤマハなら、その感性が豊かに花開く。</h1>
                 <!-- 導入メッセージ -->
                 <p>3歳は「想像の世界に入り込み、『その気』になって表現ができるようになる特別な時期」です。この時期に「質の高い音楽に触れ、楽しむ経験を積み重ねる豊かなインプットが、将来、臆せず自分を表現できる力へつながります」。</p>
                 <!-- キービジュアル。実際の画像URLに差し替えてください -->
@@ -801,6 +860,40 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== ここから追加 ===== -->
+        <section class="access-section">
+            <div class="container">
+                <h2>教室のご案内</h2>
+                <div class="access-card">
+                    <div class="access-image">
+                        <img src="http://toriimusic.co.jp/wp/wp-content/uploads/2018/10/1450601834883-300x225.jpg" alt="大津わにセンターの外観">
+                    </div>
+                    <div class="access-info">
+                        <h3>大津わにセンター</h3>
+                        <dl>
+                            <dt>所在地</dt>
+                            <dd>
+                                〒520-0522 滋賀県大津市和迩中浜366<br>
+                                <a href="https://www.google.com/maps/search/?api=1&query=滋賀県大津市和迩中浜366" target="_blank" rel="noopener noreferrer">▶︎ Googleマップで見る</a>
+                            </dd>
+
+                            <dt>アクセス</dt>
+                            <dd>
+                                JR湖西線 和邇駅より徒歩1分<br>
+                                <span class="highlight">駐車場</span>：あり
+                            </dd>
+                            
+                            <dt>電話番号</dt>
+                            <dd>
+                                0740-22-2063
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== ここまで追加 ===== -->
 
         <section class="cta-section">
             <div class="container">
