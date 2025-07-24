@@ -421,7 +421,69 @@
             font-weight: bold;
         }
 
-        /* Call to Action */
+        /* ===== ここから追加 ===== */
+        /* 中間CTAセクション */
+        .cta-mid-section {
+            background-color: #f0fdfc; /* 薄いティール */
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 0 auto 20px; /* 上下のマージン調整 */
+            border-radius: 8px;
+        }
+        .cta-mid-section h2 {
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .cta-mid-section p {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        .cta-mid-section .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-mid-section .cta-buttons a,
+        .cta-section .cta-buttons a { /* 両方のCTAに共通スタイルを適用 */
+            display: inline-block;
+            background-color: #ff9800; /* Orange Accent */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-decoration: none; /* 下線を常に非表示 */
+        }
+        .cta-mid-section .cta-buttons a:hover,
+        .cta-section .cta-buttons a:hover { /* 両方のCTAに共通スタイルを適用 */
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        /* 電話ボタンの個別スタイル */
+        .cta-mid-section .cta-buttons a.phone-button {
+            background-color: #00796b; /* Teal */
+        }
+        .cta-mid-section .cta-buttons a.phone-button:hover {
+            background-color: #004d40; /* Darker Teal */
+        }
+        .cta-mid-section .cta-buttons a .phone-note {
+            display: block;
+            font-size: 0.7em;
+            font-weight: normal;
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+        /* ===== ここまで追加 ===== */
+        
+        /* Call to Action (最下部) */
         .cta-section {
             background-color: #004d40; /* Dark Teal */
             color: #fff;
@@ -439,22 +501,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-        }
-        .cta-section .cta-buttons a {
-            display: inline-block;
-            background-color: #ff9800; /* Orange Accent */
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        .cta-section .cta-buttons a:hover {
-            background-color: #f57c00;
-            transform: translateY(-3px);
-            text-decoration: none;
         }
 
         /* Footer */
@@ -506,11 +552,16 @@
             .support-section .support-item img {
                 margin-bottom: 10px;
             }
+
+            /* ===== ここから追加（レスポンシブ） ===== */
+            .cta-mid-section .cta-buttons a,
             .cta-section .cta-buttons a {
                 width: 100%;
                 box-sizing: border-box;
+                font-size: 1.1em;
             }
-
+            /* ===== ここまで追加（レスポンシブ） ===== */
+            
             .access-section .access-card {
                 flex-direction: column;
                 padding: 20px;
@@ -547,6 +598,19 @@
                 <img src="./images/sannsaijigatanosisouni.jpg" alt="3歳児が楽しそうに鍵盤に触れる子供たち" class="hero-image">
             </div>
         </section>
+
+        <!-- ===== ここから追加 1 ===== -->
+        <section class="cta-mid-section">
+            <div class="container">
+                <h2>さっそく、音楽の世界を体験してみませんか？</h2>
+                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+                <div class="cta-buttons">
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== ここまで追加 1 ===== -->
 
         <section class="why-choose">
             <div class="container">
@@ -798,6 +862,19 @@
             </div>
         </section>
 
+        <!-- ===== ここから追加 2 ===== -->
+        <section class="cta-mid-section">
+            <div class="container">
+                <h2>料金や内容にご納得いただけましたら、<br>ぜひ一度、教室の雰囲気を見に来てください！</h2>
+                <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
+                <div class="cta-buttons">
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== ここまで追加 2 ===== -->
+
         <section class="faq-section">
             <div class="container">
                 <h2>よくある質問（FAQ）</h2>
@@ -893,7 +970,7 @@
             <div class="container">
                 <h2>まずはお子様の可能性を体験！</h2>
                 <div class="cta-buttons">
-                    <a href="#体験レッスン申込" class="button">無料体験レッスン・レッスン見学を予約する</a>
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">無料体験レッスン・レッスン見学を予約する</a>
                     </div>
                 <p>無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
             </div>
