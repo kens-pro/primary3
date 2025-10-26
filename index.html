@@ -7,79 +7,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
+        * { box-sizing: border-box; }
         body {
             font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
         }
 
-        h1, h2, h3, h4 {
-            color: #004d40; /* Dark Teal */
-            font-weight: 700;
-        }
-
+        h1, h2, h3, h4 { color: #004d40; font-weight: 700; }
         h1 { font-size: 2.2em; text-align: center; margin-bottom: 0.5em; }
         h2 { font-size: 1.8em; margin-bottom: 0.8em; }
         h3 { font-size: 1.5em; margin-bottom: 0.6em; }
         p { margin-bottom: 1em; }
         a { color: #00796b; text-decoration: none; }
         a:hover { text-decoration: underline; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
         /* Header */
         header {
-            background-color: #e0f2f1; /* Light Teal */
+            background-color: #e0f2f1;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        header .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.1em;
-            color: #004d40;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        header .logo { max-width: 200px; height: auto; margin-bottom: 10px; }
+        header p { font-size: 1.1em; color: #004d40; max-width: 800px; margin: 0 auto; }
 
-        /* Hero Section (First View) */
+        /* Hero */
         .hero {
-            background: linear-gradient(to bottom, #b2dfdb, #e0f2f1); /* Gradient */
+            background: linear-gradient(to bottom, #b2dfdb, #e0f2f1);
             padding: 60px 20px;
             text-align: center;
         }
-        .hero h1 {
-            font-size: 2.5em;
-            color: #004d40;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .hero p {
-            font-size: 1.2em;
-            color: #004d40;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
+        .hero h1 { font-size: 2.5em; color: #004d40; margin-bottom: 20px; line-height: 1.3; }
+        .hero p { font-size: 1.2em; color: #004d40; max-width: 800px; margin: 0 auto 30px; }
         .hero .hero-image {
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
+            max-width: 80%; height: auto; border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* Section Styling */
+        /* Section */
         section {
             padding: 60px 0;
             background-color: #fff;
@@ -87,490 +56,207 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             border-radius: 8px;
         }
-        section:nth-of-type(even) {
-            background-color: #f0fdfc; /* Very light teal */
-        }
+        section:nth-of-type(even) { background-color: #f0fdfc; }
         section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            text-align: center; margin-bottom: 40px; position: relative;
         }
         section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: #00796b;
-            margin: 10px auto 0;
-            border-radius: 2px;
+            content: ''; display: block; width: 80px; height: 4px; background-color: #00796b;
+            margin: 10px auto 0; border-radius: 2px;
         }
 
-        /* Why Choose Now Section */
-        .why-choose .content-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            align-items: flex-start;
+        /* Why Choose */
+        .content-grid {
+            display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: flex-start;
         }
-        .why-choose .grid-item {
-            flex: 1 1 calc(50% - 30px); /* 2 columns on larger screens */
-            min-width: 300px;
-            background-color: #e0f2f1;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .grid-item {
+            flex: 1 1 calc(50% - 30px); min-width: 300px; background-color: #e0f2f1;
+            padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .why-choose .grid-item h3 {
-            color: #004d40;
-            margin-top: 0;
-        }
-        .why-choose .grid-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
+        .grid-item img { max-width: 100%; height: auto; border-radius: 5px; margin-bottom: 15px; }
 
-        /* Course Details Section */
+        /* Course Details */
         .course-details ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
         }
         .course-details ul li {
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1 1 calc(33% - 20px);
-            min-width: 280px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #e0f2f1; padding: 20px; border-radius: 8px;
+            flex: 1 1 calc(33% - 20px); min-width: 280px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .course-details .method-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-            justify-content: center;
+        .method-grid {
+            display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px; justify-content: center;
         }
-        .course-details .method-item {
-            flex: 1 1 calc(25% - 20px);
-            min-width: 150px;
-            text-align: center;
-            padding: 15px;
-            background-color: #f0fdfc;
-            border-radius: 5px;
-            border: 1px solid #b2dfdb;
+        .method-item {
+            flex: 1 1 calc(25% - 20px); min-width: 150px; text-align: center; padding: 15px;
+            background-color: #f0fdfc; border-radius: 5px; border: 1px solid #b2dfdb;
         }
-        .course-details .method-item h4 {
-            color: #00796b;
-            margin: 0;
-            font-size: 1.1em;
-        }
-        .course-details .lesson-content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .course-details .lesson-content-item {
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .course-details .lesson-content-item img {
-            max-width: 100px;
-            margin-bottom: 10px;
-        }
-        .course-details .growth-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
-        }
-        .course-details .growth-table th,
-        .course-details .growth-table td {
-            border: 1px solid #b2dfdb;
-            padding: 12px;
-            text-align: left;
-        }
-        .course-details .growth-table th {
-            background-color: #00796b;
-            color: #fff;
-            font-weight: bold;
-        }
-        .course-details .growth-table td:first-child {
-            background-color: #f0fdfc;
-            font-weight: bold;
-            color: #004d40;
-        }
+        .method-item h4 { color: #00796b; margin: 0; font-size: 1.1em; }
 
-        /* Lesson Forms Section */
+        .lesson-content-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin-top: 40px;
+        }
+        .lesson-content-item {
+            background-color: #e0f2f1; padding: 20px; border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center;
+        }
+        .lesson-content-item img { max-width: 100px; margin-bottom: 10px; }
+
+        .growth-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+        .growth-table th, .growth-table td {
+            border: 1px solid #b2dfdb; padding: 12px; text-align: left;
+        }
+        .growth-table th { background-color: #00796b; color: #fff; font-weight: bold; }
+        .growth-table td:first-child { background-color: #f0fdfc; font-weight: bold; color: #004d40; }
+
+        /* Lesson Forms */
         .lesson-forms .form-option {
-            background-color: #e0f2f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #e0f2f1; padding: 30px; border-radius: 8px;
+            margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .lesson-forms .form-option h3 {
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.6em;
-        }
-        .lesson-forms .form-option ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .lesson-forms .form-option ul li strong {
-            color: #00796b;
-        }
-        .lesson-forms .form-option.personal {
-            background-color: #b2dfdb;
-        }
+        .lesson-forms .form-option.personal { background-color: #b2dfdb; }
+        .lesson-forms .form-option h3 { color: #004d40; margin: 0 0 15px; font-size: 1.6em; }
+        .lesson-forms .form-option ul { list-style: disc; padding-left: 20px; margin-bottom: 15px; }
+        .lesson-forms .form-option ul li strong { color: #00796b; }
 
-        /* Support Section */
-        .support-section .support-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            background-color: #f0fdfc;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        /* Support */
+        .support-item {
+            display: flex; align-items: center; gap: 20px; margin-bottom: 30px;
+            background-color: #f0fdfc; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .support-section .support-item img {
-            width: 80px;
-            height: auto;
-            flex-shrink: 0;
-        }
-        .support-section .support-item h3 {
-            margin: 0;
-            color: #004d40;
-        }
-        .support-section .support-item p {
-            margin: 0;
-        }
+        .support-item img { width: 80px; height: auto; flex-shrink: 0; }
 
-        /* Pricing Section */
-        .pricing-section .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-        .pricing-section .price-table th,
-        .pricing-section .price-table td {
-            border: 1px solid #b2dfdb;
-            padding: 12px;
-            text-align: left;
-        }
-        .pricing-section .price-table th {
-            background-color: #00796b;
-            color: #fff;
-            font-weight: bold;
-        }
-        .pricing-section .price-table td:first-child {
-            background-color: #e0f2f1;
-            font-weight: bold;
-        }
-        .pricing-section .note {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 20px;
-        }
-        .pricing-section .material-cost {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            text-align: center;
-        }
-        .pricing-section .material-item {
-            background-color: #f0fdfc;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .pricing-section .material-item img {
-            max-width: 120px;
-            margin-bottom: 10px;
-        }
-        .pricing-section .material-item p {
-            font-weight: bold;
-            color: #004d40;
-            margin: 0;
-        }
+        /* Pricing */
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .price-table th, .price-table td { border: 1px solid #b2dfdb; padding: 12px; text-align: left; }
+        .price-table th { background-color: #00796b; color: #fff; font-weight: bold; }
+        .price-table td:first-child { background-color: #e0f2f1; font-weight: bold; }
+        .pricing-section .note { font-size: 0.9em; color: #666; margin-top: 20px; }
 
-        /* FAQ Section */
+        .material-cost {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; text-align: center;
+        }
+        .material-item { background-color: #f0fdfc; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .material-item img { max-width: 120px; margin-bottom: 10px; }
+        .material-item p { font-weight: bold; color: #004d40; margin: 0; }
+
+        /* ===== 共通CTAボタン ===== */
+        .cta-buttons {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+        }
+        .btn {
+            display: inline-flex; justify-content: center; align-items: center; text-align: center;
+            padding: 15px 30px; border-radius: 30px; font-size: 1.2em; font-weight: bold;
+            text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            flex: 1 1 260px; min-width: 260px;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        .btn-line { background:#06C755; color:#fff; box-shadow:0 8px 18px rgba(6,199,85,.25); }
+        .btn-line:hover { background:#05b64e; }
+        .btn-form { background:#ff9800; color:#fff; }
+        .btn-form:hover { background:#f57c00; }
+        .btn-phone { background:#00796b; color:#fff; }
+        .btn-phone:hover { background:#004d40; }
+        .phone-note { display:block; font-size:.7em; font-weight:normal; margin-top:4px; line-height:1.2; }
+        /* 複数行テキストの厳密センター */
+        .btn-phone, .btn-line, .btn-form { line-height: 1.25; }
+
+        /* 中間CTA */
+        .cta-mid-section {
+            background-color: #f0fdfc; color: #333; padding: 40px 20px; text-align: center; margin: 0 auto 20px; border-radius: 8px;
+        }
+        .cta-mid-section h2 { color: #004d40; margin: 0 0 15px; }
+        .cta-mid-section p { max-width: 600px; margin: 0 auto 30px; }
+
+        /* 最下部CTA */
+        .cta-section {
+            background-color: #004d40; color: #fff; padding: 60px 20px; text-align: center; border-radius: 8px; margin-bottom: 20px;
+        }
+        .cta-section h2 { color: #fff; margin-bottom: 30px; }
+
+        /* FAQ */
         .faq-section .faq-item {
-            background-color: #e0f2f1;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
+            background-color: #e0f2f1; margin-bottom: 15px; border-radius: 8px; overflow: hidden;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .faq-section .faq-question {
-            display: block;
-            background-color: #00796b;
-            color: #fff;
-            padding: 18px 25px;
-            cursor: pointer;
-            font-weight: bold;
-            position: relative;
-            user-select: none;
-            transition: background-color 0.3s ease;
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: #00796b; color: #fff; padding: 18px 25px; cursor: pointer; font-weight: bold;
+            position: relative; user-select: none; transition: background-color 0.3s ease;
+            outline: none; /* キーボード操作のために後述のfocusスタイル付与 */
         }
-        .faq-section .faq-question:hover {
-            background-color: #004d40;
-        }
+        .faq-section .faq-question:hover { background-color: #006459; }
+        .faq-section .faq-question:focus { box-shadow: inset 0 0 0 3px rgba(255,255,255,.35); }
         .faq-section .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5em;
-            transition: transform 0.3s ease;
+            content: '+'; font-size: 1.5em; line-height: 1; margin-left: 12px; transition: transform 0.3s ease;
         }
-        .faq-section .faq-question.active::after {
-            content: '-';
-            transform: translateY(-50%) rotate(0deg); /* No rotation for minus */
-        }
+        .faq-section .faq-question.active::after { content: '–'; } /* マイナス記号 */
         .faq-section .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            background-color: #f9f9f9;
+            padding: 0 25px; max-height: 0; overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; background-color: #f9f9f9;
         }
-        .faq-section .faq-answer.open {
-            max-height: 500px; /* Sufficiently large value for content */
-            padding: 15px 25px;
-        }
-        .faq-section .faq-link {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .faq-section .faq-link a {
-            display: inline-block;
-            background-color: #00796b;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .faq-section .faq-link a:hover {
-            background-color: #004d40;
-            text-decoration: none;
-        }
+        .faq-section .faq-answer.open { padding: 15px 25px; }
 
-        /* Access Section */
-        .access-section {
-            background-color: #fff;
+        /* Access */
+        .access-section { background-color: #fff; }
+        .access-card {
+            display: flex; flex-wrap: wrap; gap: 30px; background-color: #f0fdfc; padding: 30px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); align-items: center;
         }
-        .access-section .access-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            background-color: #f0fdfc;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            align-items: center;
-        }
-        .access-section .access-image {
-            flex: 1 1 300px;
-        }
-        .access-section .access-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .access-section .access-info {
-            flex: 2 1 400px;
-        }
-        .access-section .access-info h3 {
-            font-size: 1.6em;
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .access-section .access-info dl {
-            margin: 0;
-        }
-        .access-section .access-info dt {
-            font-weight: 700;
-            color: #004d40;
-            margin-top: 15px;
-        }
-        .access-section .access-info dd {
-            margin: 5px 0 0 0;
-        }
-        .access-section .access-info .highlight {
-            color: #00796b;
-            font-weight: bold;
-        }
-
-        /* ===== ここから追加 ===== */
-        /* 中間CTAセクション */
-        .cta-mid-section {
-            background-color: #f0fdfc; /* 薄いティール */
-            color: #333;
-            padding: 40px 20px;
-            text-align: center;
-            margin: 0 auto 20px; /* 上下のマージン調整 */
-            border-radius: 8px;
-        }
-        .cta-mid-section h2 {
-            color: #004d40;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .cta-mid-section p {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
-        .cta-mid-section .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .cta-mid-section .cta-buttons a,
-        .cta-section .cta-buttons a { /* 両方のCTAに共通スタイルを適用 */
-            display: inline-block;
-            background-color: #ff9800; /* Orange Accent */
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            text-decoration: none; /* 下線を常に非表示 */
-        }
-        .cta-mid-section .cta-buttons a:hover,
-        .cta-section .cta-buttons a:hover { /* 両方のCTAに共通スタイルを適用 */
-            background-color: #f57c00;
-            transform: translateY(-3px);
-            text-decoration: none;
-        }
-        /* 電話ボタンの個別スタイル */
-        .cta-mid-section .cta-buttons a.phone-button {
-            background-color: #00796b; /* Teal */
-        }
-        .cta-mid-section .cta-buttons a.phone-button:hover {
-            background-color: #004d40; /* Darker Teal */
-        }
-        .cta-mid-section .cta-buttons a .phone-note {
-            display: block;
-            font-size: 0.7em;
-            font-weight: normal;
-            margin-top: 4px;
-            line-height: 1.2;
-        }
-        /* ===== ここまで追加 ===== */
-        
-        /* Call to Action (最下部) */
-        .cta-section {
-            background-color: #004d40; /* Dark Teal */
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .cta-section h2 {
-            color: #fff;
-            margin-bottom: 30px;
-        }
-        .cta-section .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+        .access-image { flex: 1 1 300px; }
+        .access-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .access-info { flex: 2 1 400px; }
+        .access-info h3 { font-size: 1.6em; color: #004d40; margin: 0 0 20px; }
+        .access-info dl { margin: 0; }
+        .access-info dt { font-weight: 700; color: #004d40; margin-top: 15px; }
+        .access-info dd { margin: 5px 0 0 0; }
+        .highlight { color: #00796b; font-weight: bold; }
 
         /* Footer */
-        footer {
-            background-color: #263238; /* Dark Grey Blue */
-            color: #eceff1;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        footer .footer-links a {
-            color: #80cbc4; /* Light Aqua */
-            margin: 0 10px;
-        }
-        footer .social-links img {
-            width: 30px;
-            height: 30px;
-            margin: 0 8px;
-            vertical-align: middle;
-        }
-        footer p {
-            margin-top: 20px;
-        }
+        footer { background-color: #263238; color: #eceff1; padding: 40px 20px; text-align: center; font-size: 0.9em; }
 
-        /* Responsive Adjustments */
+        /* Sticky CTA (mobile) */
+        .sticky-cta{
+            position: fixed; left: 0; right: 0; bottom: 0; background: #ffffff;
+            border-top: 1px solid rgba(0,0,0,.08); box-shadow: 0 -6px 18px rgba(0,0,0,.08);
+            padding: 10px 12px env(safe-area-inset-bottom); z-index: 999; display: none; /* JS制御 */
+        }
+        .sticky-cta .container{ max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .sticky-cta-inner{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+        }
+        .sticky-btn{
+            display: inline-flex; justify-content: center; align-items: center; text-align: center;
+            padding: 14px 10px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 1.02rem;
+            line-height: 1.25;
+        }
+        .sticky-btn--line{ background:#06C755; color:#fff; box-shadow:0 8px 18px rgba(6,199,85,.25); }
+        .sticky-btn--tel{ background:#fff; color:#00796b; border:2px solid #00796b; }
+
+        /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 1.8em; }
             h2 { font-size: 1.5em; }
             h3 { font-size: 1.3em; }
-
             .hero { padding: 40px 15px; }
             .hero h1 { font-size: 2em; }
             .hero p { font-size: 1em; }
+            .grid-item { flex: 1 1 100%; }
+            .course-details ul li, .method-item { flex: 1 1 100%; }
+            .lesson-content-grid { grid-template-columns: 1fr; }
+            .support-item { flex-direction: column; text-align: center; }
+            .support-item img { margin-bottom: 10px; }
 
-            .why-choose .grid-item {
-                flex: 1 1 100%; /* Single column on small screens */
-            }
-            .course-details ul li,
-            .course-details .method-item {
-                flex: 1 1 100%;
-            }
-            .course-details .lesson-content-grid {
-                grid-template-columns: 1fr;
-            }
-            .support-section .support-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .support-section .support-item img {
-                margin-bottom: 10px;
-            }
+            .btn { width: 100%; min-width: 0; box-sizing: border-box; font-size: 1.1em; }
 
-            /* ===== ここから追加（レスポンシブ） ===== */
-            .cta-mid-section .cta-buttons a,
-            .cta-section .cta-buttons a {
-                width: 100%;
-                box-sizing: border-box;
-                font-size: 1.1em;
-            }
-            /* ===== ここまで追加（レスポンシブ） ===== */
-            
-            .access-section .access-card {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .access-section .access-info {
-                text-align: center;
-            }
+            .access-card { flex-direction: column; padding: 20px; }
+            .access-info { text-align: center; }
+
+            .sticky-cta{ display:block; }
+            body{ padding-bottom: 80px; }
         }
-
         @media (max-width: 480px) {
             .container { padding: 15px; }
             section { padding: 40px 0; }
@@ -582,7 +268,6 @@
 <body>
     <header>
         <div class="container">
-            <!-- 仮のロゴ。実際のロゴ画像URLに差し替えてください -->
             <img src="./images/logo.png" alt="ヤマハ音楽教室ロゴ" class="logo">
             <p>はじめての音楽体験を、最高の教育で。3歳からの「ぷらいまりー」コース。</p>
         </div>
@@ -592,25 +277,23 @@
         <section class="hero">
             <div class="container">
                 <h1>3歳、想像力あふれるわが子に、<br>初めての音楽体験を。ヤマハなら、その感性が豊かに花開く。</h1>
-                <!-- 導入メッセージ -->
                 <p>3歳は「想像の世界に入り込み、『その気』になって表現ができるようになる特別な時期」です。この時期に「質の高い音楽に触れ、楽しむ経験を積み重ねる豊かなインプットが、将来、臆せず自分を表現できる力へつながります」。</p>
-                <!-- キービジュアル。実際の画像URLに差し替えてください -->
                 <img src="./images/sannsaijigatanosisouni.jpg" alt="3歳児が楽しそうに鍵盤に触れる子供たち" class="hero-image">
             </div>
         </section>
 
-        <!-- ===== ここから追加 1 ===== -->
+        <!-- 中間CTA① -->
         <section class="cta-mid-section">
             <div class="container">
                 <h2>さっそく、音楽の世界を体験してみませんか？</h2>
                 <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="btn btn-form">📝 Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
                 </div>
             </div>
         </section>
-        <!-- ===== ここまで追加 1 ===== -->
 
         <section class="why-choose">
             <div class="container">
@@ -626,7 +309,7 @@
                         <h3>単なる「弾く」だけじゃない、総合的な人間形成</h3>
                         <p>ヤマハでは「弾く」ことを、「指が速く動くかどうか」「楽譜が読めるかどうか」に限定せず、「こう弾きたい」というイメージを持ち、音をよく聴きながら気持ちを込めて演奏できることを大切にしています。</p>
                         <p>レッスンを通じて、鍵盤楽器の技術だけでなく、「協調性、社会性、粘り強さ、集中力といった『非認知能力』も自然と育まれます」。</p>
-                        <p>東京大学大学院の遠藤利彦教授も、幼児教育における「非認知能力」（自己肯定感、意欲、粘り強さ、対人関係能力など）の重要性を強調しています。</p>
+                        <p>東京大学大学院の遠藤利彦教授も、幼児教育における「非認知能力」の重要性を強調しています。</p>
                         <img src="./images/raph.jpg" alt="非認知能力の育成イメージ">
                     </div>
                     <div class="grid-item">
@@ -751,16 +434,16 @@
                 <div class="form-option">
                     <h3>「ぷらいまりー」コース（グループ＋個人レッスン）</h3>
                     <ul>
-                        <li><strong>グループレッスン（月3回、50分/回）</strong>: 「お友だちと一緒に音楽を奏で、分かち合う歓びが得られます」。他の子の音を聴いたり、クラスでの発表を通じて「自分ももっとがんばりたい！」という意欲や積極性を育みます。グループの人数は「5～8名程度」です。</li>
-                        <li><strong>個人レッスン（月0回～月3回、20分/回）</strong>: グループレッスンに加えて、「個々に応じた演奏指導や読譜指導を行います」。一人ひとりの様子に合わせたきめ細やかなサポートで、「引く力」を着実に伸ばし、「もっと弾きたい」という気持ちを育みます。</li>
-                        <li>「ぷらいまりー1は『グループのみ』、または『グループ+個人月1回』を選択可能」。「ぷらいまりー2・3は『グループ+個人月1回』が基本」ですが、「ご希望に応じて回数（月2回・3回）をお選びいただけます」。入会後に回数変更も可能です。</li>
+                        <li><strong>グループレッスン（月3回、50分/回）</strong>: お友だちと一緒に音楽を奏で、分かち合う歓びが得られます。グループの人数は「5～8名程度」です。</li>
+                        <li><strong>個人レッスン（月0回～月3回、20分/回）</strong>: 個々に応じた演奏指導や読譜指導を行います。</li>
+                        <li>ぷらいまりー1は「グループのみ」または「グループ+個人月1回」。ぷらいまりー2・3は「グループ+個人月1回」が基本（回数は調整可）。</li>
                     </ul>
                 </div>
                 <div class="form-option personal">
                     <h3>「ぷらいまりーパーソナル」コース（個人レッスンのみ）</h3>
                     <ul>
-                        <li>「ピアノまたはエレクトーンの個人レッスンのみ」で受講する形態です。1回30分、月3回のレッスンで、鍵盤演奏において個々へのきめ細やかな指導を重視したい場合におすすめです。</li>
-                        <li>「伸びる時期に伸びる力を育む」という考え方はそのままに、ピアノまたはエレクトーンの個人レッスンで、音楽の基礎となる力や自由に表現できる力を身につけます。</li>
+                        <li>ピアノまたはエレクトーンの個人レッスンのみ。1回30分、月3回。</li>
+                        <li>音楽の基礎力と自由に表現できる力を身につけます。</li>
                     </ul>
                 </div>
             </div>
@@ -773,21 +456,21 @@
                     <img src="./images/repalesson04.jpg" alt="保護者同伴のアイコン">
                     <div>
                         <h3>保護者の同伴について</h3>
-                        <p>「ぷらいまりー1・ぷらいまりー2の前半は保護者の方にご同伴いただきレッスンを行いますが、ぷらいまりー2の後半からはお子様の自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります」。</p>
+                        <p>ぷらいまりー1・2前半は同伴、2後半から自立を意識、3からは任意です。</p>
                     </div>
                 </div>
                 <div class="support-item">
                     <img src="./images/myu-nabifeature04.png" alt="アプリと動画のアイコン">
                     <div>
                         <h3>充実した練習サポートツール</h3>
-                        <p>「練習のポイントが分かる動画」や、「キャラクターと一緒にくり返し練習ができるアプリ」など、「ご家庭での練習をサポートする様々なツール」が用意されています。※アプリは「ぷらいまりー2より使用可能」です。</p>
+                        <p>練習ポイント動画やアプリなど、ご家庭練習を支えるツールが揃っています（アプリはぷらいまりー2より）。</p>
                     </div>
                 </div>
                 <div class="support-item">
                     <img src="./images/myu-nabifeature01.png" alt="ミューナビのアイコン">
                     <div>
                         <h3>教材音源は「ミューナビ」で提供</h3>
-                        <p>レッスン料には「教材音源や動画を視聴できる専用サイト『ミューナビ』の利用料を含みます」。「インターネットに接続可能な端末（スマートフォンやPC等）・通信環境・メールアドレスをご用意ください」。「ミューナビのお試し版にて動画・音声等が再生されるかご確認ください」。**CDの販売はございません**のでご注意ください。</p>
+                        <p>教材音源・動画は専用サイト「ミューナビ」で視聴。<strong>CDの販売はありません</strong>。</p>
                     </div>
                 </div>
             </div>
@@ -800,53 +483,24 @@
                 <table class="price-table">
                     <thead>
                         <tr>
-                            <th>コース</th>
-                            <th>形態</th>
-                            <th>月額料金</th>
+                            <th>コース</th><th>形態</th><th>月額料金</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td rowspan="3">ぷらいまりー1</td>
-                            <td>グループのみ</td>
-                            <td><strong>7,370円 または 7,920円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>グループ + 個人月1回</td>
-                            <td><strong>9,350円 ～ 10,230円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>グループ + 個人月2回/3回</td>
-                            <td>設定なし</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">ぷらいまりー2・3</td>
-                            <td>グループのみ</td>
-                            <td><strong>8,470円 または 9,020円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>グループ + 個人月1回</td>
-                            <td><strong>10,450円 ～ 11,330円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>グループ + 個人月2回</td>
-                            <td><strong>12,430円 ～ 13,310円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>グループ + 個人月3回</td>
-                            <td><strong>14,410円 ～ 15,510円</strong></td>
-                        </tr>
-                        <tr>
-                            <td>ぷらいまりーパーソナル</td>
-                            <td>個人レッスンのみ（月3回）</td>
-                            <td><strong>10,670円 または 11,220円</strong></td>
-                        </tr>
+                        <tr><td rowspan="3">ぷらいまりー1</td><td>グループのみ</td><td><strong>7,370円 または 7,920円</strong></td></tr>
+                        <tr><td>グループ + 個人月1回</td><td><strong>9,350円 ～ 10,230円</strong></td></tr>
+                        <tr><td>グループ + 個人月2回/3回</td><td>設定なし</td></tr>
+                        <tr><td rowspan="4">ぷらいまりー2・3</td><td>グループのみ</td><td><strong>8,470円 または 9,020円</strong></td></tr>
+                        <tr><td>グループ + 個人月1回</td><td><strong>10,450円 ～ 11,330円</strong></td></tr>
+                        <tr><td>グループ + 個人月2回</td><td><strong>12,430円 ～ 13,310円</strong></td></tr>
+                        <tr><td>グループ + 個人月3回</td><td><strong>14,410円 ～ 15,510円</strong></td></tr>
+                        <tr><td>ぷらいまりーパーソナル</td><td>個人（月3回）</td><td><strong>10,670円 または 11,220円</strong></td></tr>
                     </tbody>
                 </table>
-                <p class="note">※レッスン料は平日・土日の受講曜日によって異なります。</p>
+                <p class="note">※レッスン料は平日・土日で異なります。施設費(770円)は上記に含む。</p>
 
                 <h3>別途費用</h3>
-                <p>入会金が別途かかります。金額は教室によって異なりますので、ご検討の教室ページをご覧ください。<br>※月々の施設費(770円)は、上記のレッスン料に含まれています。</p>
+                <p>入会金は会場により異なります。各教室ページをご確認ください。</p>
 
                 <h3>入会時教材費（税込）</h3>
                 <div class="material-cost">
@@ -862,73 +516,81 @@
             </div>
         </section>
 
-        <!-- ===== ここから追加 2 ===== -->
+        <!-- 中間CTA② -->
         <section class="cta-mid-section">
             <div class="container">
                 <h2>料金や内容にご納得いただけましたら、<br>ぜひ一度、教室の雰囲気を見に来てください！</h2>
                 <p>Webフォームまたはお電話で、お気軽に体験レッスン・見学をお申し込みください。</p>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">Webで体験レッスンを予約</a>
-                    <a href="tel:0740-22-2063" class="button phone-button">電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="btn btn-form">📝 Webで体験レッスンを予約</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 電話でお問い合わせ<span class="phone-note">(タップして発信)</span></a>
                 </div>
             </div>
         </section>
-        <!-- ===== ここまで追加 2 ===== -->
 
+        <!-- FAQ -->
         <section class="faq-section">
             <div class="container">
                 <h2>よくある質問（FAQ）</h2>
+
                 <div class="faq-item">
-                    <div class="faq-question">ヤマハミュージックスクールで習うとなぜ良いの？（個人経営のピアノ教室との違いは？）</div>
+                    <div class="faq-question" role="button" tabindex="0">ヤマハミュージックスクールで習うとなぜ良いの？（個人経営のピアノ教室との違いは？）</div>
                     <div class="faq-answer">
-                        <p>ヤマハミュージックスクールでは演奏力だけでなく、総合的な音楽力を育みます。ピアノなどの楽器を習う教室では、楽譜を読んで弾く「よむ→ひく」が一般的です。一方ヤマハミュージックスクールでは、「きく→うたう→ひく→よむ→つくる」という独自のカリキュラムで、効果的に音楽基礎力を身につけていきます。弾くことに重点を置いた個人レッスンに比べ、最初は差を感じることがあるかもしれませんが、培った音楽力は指先の発達が著しい6,7歳に向けての土台となり、確かな演奏力につながっていきます。</p>
+                        <p>ヤマハミュージックスクールでは演奏力だけでなく、総合的な音楽力を育みます。個人教室の「よむ→ひく」中心に比べ、ヤマハでは「きく→うたう→ひく→よむ→つくる」というカリキュラムで基礎力を養います。培った音楽力は6,7歳の指先の発達期に確かな演奏力へとつながります。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">今までのコース（おんがくなかよしコース・幼児科）とは何が違うの？</div>
+                    <div class="faq-question" role="button" tabindex="0">今までのコース（おんがくなかよしコース・幼児科）とは何が違うの？</div>
                     <div class="faq-answer">
-                        <p>
-ぷらいまりーは「もっと、ひける。もっと、きける。」をコンセプトに、おんがくなかよしコース（1年）・幼児科（2年）を再編し3年間の新カリキュラムにアップデートしました。音楽の基礎となる力や自由に表現できる力を身につけるという考え方はそのままに、確実に「弾く力」を育めることが、今までのコース体系との大きな違いです。グループレッスンに個人レッスンを組み合わせて受講いただくことで、個々に応じて「弾く力」をぐんぐん伸ばせるレッスンを実現します。また個人レッスンのみに対応する「ぷらいまりーパーソナル」も実施しています。充実した講師陣、整備された会場のあるヤマハにしか提供できない全国一律のレッスンシステムです。</p>
+                        <p>「もっと、ひける。もっと、きける。」をコンセプトに3年間の新カリキュラムへ。グループ＋個人の併用で「弾く力」を確実に育める点が大きな違いです。個人のみの「ぷらいまりーパーソナル」もあります。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">宿題はありますか？</div>
+                    <div class="faq-question" role="button" tabindex="0">宿題はありますか？</div>
                     <div class="faq-answer">
-                        <p>ぷらいまりーでは、ご家庭で音源を聴く、動画を視聴するということからスタートし、少しずつ鍵盤を使用した家庭学習をお願いしています。レッスン内容の「復習」が中心となるため、できたことを繰り返すことはお子さまの自信となり、次のレッスンや練習への意欲につながります。その他に、カラフルでたのしいワークもご用意。シールを使って想像力豊かに創作したり、楽しく楽典の要素を学んでいきます。</p>
+                        <p>ご家庭では音源視聴や動画視聴からスタートし、少しずつ鍵盤の練習へ。復習中心なので自信が育ち、次の意欲につながります。創作ワークやシールなども用意しています。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">3年後にはどんな曲が弾けるようになりますか？</div>
+                    <div class="faq-question" role="button" tabindex="0">3年後にはどんな曲が弾けるようになりますか？</div>
                     <div class="faq-answer">
-                        <p>さまざまな調性の曲を両手で演奏できるようになります。また、たくさんのジャンルの音楽を経験するので、ただ曲が弾けるようになるだけでなく、曲のニュアンスを身体で感じ取り、その曲にふさわしい表現で人の心に響く演奏ができる基礎力が身に付きます。</p>
+                        <p>さまざまな調の曲を両手で演奏可能に。多ジャンルの経験から、曲のニュアンスを感じ取り表情豊かな演奏ができる基礎力が身につきます。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">家庭には、いつどのような楽器を用意したらいいですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">家庭には、いつどのような楽器を用意したらいいですか？</div>
                     <div class="faq-answer">
-                        <p>
-ぷらいまりー1は10月頃までに、ぷらいまりー2では入会したら、楽器を購入されることをおすすめします。音色や音程、音域、弾く姿勢などを考慮すると、小さなポータブルキーボードよりも、ピアノやエレクトーンをご用意していただくことをおすすめします。電子ピアノの場合は、鍵盤数が88鍵備わっていること、鍵盤のタッチや機能などをご確認の上、購入される機種をご検討ください。</p>
+                        <p>ぷらいまりー1は10月頃までに、ぷらいまりー2は入会時に準備推奨。ピアノやエレクトーン、もしくは88鍵の電子ピアノをおすすめします。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">レッスンに保護者の付き添いは必要ですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">レッスンに保護者の付き添いは必要ですか？</div>
                     <div class="faq-answer">
-                        <p>「ぷらいまりー1・ぷらいまりー2の前半は保護者の方にご同伴いただきレッスンを行いますが、ぷらいまりー2の後半からはお子様の自立を意識したレッスンに徐々にシフトし、ぷらいまりー3からは任意となります」。</p>
+                        <p>ぷらいまりー1・2前半は同伴、2後半は自立を意識、3からは任意です。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">下の子をレッスンに連れて行っても大丈夫ですか？</div>
+                    <div class="faq-question" role="button" tabindex="0">下の子をレッスンに連れて行っても大丈夫ですか？</div>
                     <div class="faq-answer">
-                        <p>下のお子さまのご入室も可能です。ぐずったり泣いてしまうこともあると思いますが、その場合は、保護者の方と一緒に一旦レッスン室の外へご退室いただき、落ち着いてからお入りいただくよう、ご協力をお願いします。この間、担当講師が上のお子さまをしっかりと見ていますので、ご安心ください。</p>
+                        <p>下のお子さまの入室も可能です。ぐずった際は一時退出のご協力をお願いします。その間、講師が上のお子さまを見守ります。</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">個人レッスンの回数は、いつ・どうやって決めればいいの？</div>
+                    <div class="faq-question" role="button" tabindex="0">個人レッスンの回数は、いつ・どうやって決めればいいの？</div>
                     <div class="faq-answer">
-                        <p>ぷらいまりー1は「グループのみ」、ぷらいまりー2・3は「グループ+個人月1回」が基本ですが、個人レッスンの回数はご希望に応じてお選びいただけます。入会後、途中で回数を変更することも可能です。個人レッスンの曜日・時間については会場に直接お問い合わせください。</p>
+                        <p>ぷらいまりー1は「グループのみ」または「グループ+個人月1回」。ぷらいまりー2・3は「グループ+個人月1回」が基本ですが、回数調整可。曜日や時間は会場へお問い合わせください。</p>
                     </div>
                 </div>
-                <div class="faq-link">
+
+                <div class="faq-link" style="text-align:center; margin-top:30px;">
                     <a href="https://school.jp.yamaha.com/music/faq/">その他のよくある質問はこちら</a>
                 </div>
             </div>
@@ -949,68 +611,131 @@
                                 〒520-0522 滋賀県大津市和迩中浜366<br>
                                 <a href="https://www.google.com/maps/search/?api=1&query=滋賀県大津市和迩中浜366" target="_blank" rel="noopener noreferrer">▶︎ Googleマップで見る</a>
                             </dd>
-
                             <dt>アクセス</dt>
-                            <dd>
-                                JR湖西線 和邇駅より徒歩1分<br>
-                                <span class="highlight">駐車場</span>：あり
-                            </dd>
-                            
+                            <dd>JR湖西線 和邇駅より徒歩1分／<span class="highlight">駐車場</span>：あり</dd>
                             <dt>電話番号</dt>
-                            <dd>
-                                0740-22-2063
-                            </dd>
+                            <dd>0740-22-2063</dd>
                         </dl>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 最下部CTA -->
         <section class="cta-section">
             <div class="container">
                 <h2>まずはお子様の可能性を体験！</h2>
                 <div class="cta-buttons">
-                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="button">無料体験レッスン・レッスン見学を予約する</a>
-                    </div>
-                <p>無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
+                    <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener" class="btn btn-line">💬 LINEで質問・相談</a>
+                    <a href="https://www.toriimusic.co.jp/%e3%81%b7%e3%82%89%e3%81%84%e3%81%be%e3%82%8a%e3%83%bc%e3%82%b3%e3%83%bc%e3%82%b9%e4%bb%963%e6%ad%b3%e5%85%90%e3%81%95%e3%82%93%e3%81%ae-%e3%81%8a%e7%94%b3%e8%be%bc%e3%81%bf%e3%83%bb%e3%81%8a%e5%95%8f/" class="btn btn-form">📝 無料体験レッスン・レッスン見学を予約する</a>
+                    <a href="tel:0740-22-2063" class="btn btn-phone">📞 お電話（0740-22-2063）<span class="phone-note">(タップで発信)</span></a>
+                </div>
+                <p style="margin-top:16px;">無料体験レッスン・レッスン見学 プレゼントキャンペーン実施中！</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-                </div>
+        <div class="container"></div>
     </footer>
 
+    <!-- Sticky CTA (mobile only) -->
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+        <div class="container">
+            <div class="sticky-cta-inner">
+                <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener"
+                   class="sticky-btn sticky-btn--line" aria-label="LINEで質問・相談">💬 LINEで質問・相談</a>
+                <a href="tel:0740-22-2063" class="sticky-btn sticky-btn--tel" aria-label="電話で問い合わせ">📞 電話</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for anchor links
+        // アンカーのスムーススクロール（必要なら）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
                 e.preventDefault();
+                target.scrollIntoView({behavior: 'smooth'});
+            });
+        });
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // FAQ Accordion（キーボード操作&リサイズ対応）
+        (function(){
+            const items = document.querySelectorAll('.faq-item');
+            const closeItem = (item) => {
+                const q = item.querySelector('.faq-question');
+                const a = item.querySelector('.faq-answer');
+                q.classList.remove('active');
+                a.classList.remove('open');
+                a.style.maxHeight = '0px';
+            };
+            const openItem = (item) => {
+                const q = item.querySelector('.faq-question');
+                const a = item.querySelector('.faq-answer');
+                q.classList.add('active');
+                a.classList.add('open');
+                a.style.maxHeight = a.scrollHeight + 'px';
+            };
+            items.forEach(item => {
+                const q = item.querySelector('.faq-question');
+                const a = item.querySelector('.faq-answer');
+
+                // 初期状態クローズ
+                closeItem(item);
+
+                const toggle = () => {
+                    if (a.classList.contains('open')) {
+                        closeItem(item);
+                    } else {
+                        // 単一開閉（必要な場合のみ他を閉じる）
+                        items.forEach(i => { if (i !== item) closeItem(i); });
+                        openItem(item);
+                    }
+                };
+
+                q.addEventListener('click', toggle);
+                q.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggle();
+                    }
+                });
+
+                // リサイズ時に開いている要素の高さを再計算
+                window.addEventListener('resize', () => {
+                    if (a.classList.contains('open')) {
+                        a.style.maxHeight = a.scrollHeight + 'px';
+                    }
                 });
             });
-        });
+        })();
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (answer.classList.contains('open')) {
-                    answer.classList.remove('open');
-                    answer.style.maxHeight = '0';
-                    answer.style.padding = '0 25px';
-                } else {
-                    answer.classList.add('open');
-                    // Set max-height to scroll height to allow smooth transition for variable content
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    answer.style.padding = '15px 25px';
+        // Sticky CTA show/hide on scroll (120px)
+        (function(){
+            const sticky = document.getElementById('stickyCta');
+            if(!sticky) return;
+            let visible = false;
+            const onScroll = () => {
+                const y = window.scrollY || document.documentElement.scrollTop || 0;
+                if(y > 120 && !visible){
+                    sticky.style.transform = 'translateY(0)';
+                    sticky.style.opacity = '1';
+                    sticky.setAttribute('aria-hidden','false');
+                    visible = true;
+                }else if(y <= 120 && visible){
+                    sticky.style.transform = '';
+                    sticky.style.opacity = '';
+                    sticky.setAttribute('aria-hidden','true');
+                    visible = false;
                 }
-            });
-        });
+            };
+            sticky.style.opacity = '0';
+            sticky.style.transform = 'translateY(100%)';
+            window.addEventListener('scroll', onScroll, {passive:true});
+            window.addEventListener('load', onScroll);
+        })();
     </script>
 </body>
 </html>
